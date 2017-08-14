@@ -4,8 +4,9 @@ import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import {List, ListItem} from 'material-ui/List';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {teal500, tealA100} from 'material-ui/styles/colors';
+import {teal500, tealA400} from 'material-ui/styles/colors';
 import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import './App.css';
 
@@ -14,13 +15,20 @@ injectTapEventPlugin();
 const muiTheme = getMuiTheme({
   palette: {
     primary1Color: teal500,
-    accent1Color: tealA100
+    accent1Color: tealA400
   }
 });
 
 const contentStyle = {
   padding: '20px'
   
+};
+const textFieldStyle = {
+  display: 'block',
+  width: '100%'
+};
+const buttonStyle = {
+  marginTop: '20px'
 };
 
 class App extends Component {
@@ -51,7 +59,9 @@ class App extends Component {
           </Drawer>
           <div style={contentStyle}>
             <form action="">
-              <TextField hintText="Email"/>
+              <TextField id = "email"floatingLabelText="Email" type="email" style={textFieldStyle}/>
+              <TextField id = "password"floatingLabelText="Password" type= "password"style={textFieldStyle}/>
+              <RaisedButton fullWidth={true} label="login" secondary={true} style={buttonStyle}/>
             </form>
           </div>
         </div>
