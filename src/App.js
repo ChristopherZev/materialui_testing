@@ -44,6 +44,14 @@ class App extends Component {
       drawerOpened: !this.state.drawerOpened
     });
   };
+  _sendForm(e){
+    e.preventDefault();
+    var _data = {
+      email: document.getElementById('email').value,
+      password: document.getElementById('password').value
+    };
+    console.log(_data);
+  };
 
   render() {
     return (
@@ -58,10 +66,10 @@ class App extends Component {
             </List>
           </Drawer>
           <div style={contentStyle}>
-            <form action="">
+            <form onSubmit={(e)=> this._sendForm(e)}>
               <TextField id = "email"floatingLabelText="Email" type="email" style={textFieldStyle}/>
               <TextField id = "password"floatingLabelText="Password" type= "password"style={textFieldStyle}/>
-              <RaisedButton fullWidth={true} label="login" secondary={true} style={buttonStyle}/>
+              <RaisedButton type="submit" fullWidth={true} label="login" secondary={true} style={buttonStyle}/>
             </form>
           </div>
         </div>
