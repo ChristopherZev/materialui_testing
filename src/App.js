@@ -57,7 +57,7 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
-          <AppBar title="Material React" onLeftIconButtonTouchTap={()=> this._toggleDrawer()}/>
+          <AppBar title="Material Hello" onLeftIconButtonTouchTap={()=> this._toggleDrawer()}/>
           <Drawer open={this.state.drawerOpened} docked={false} onRequestChange={()=> this._toggleDrawer()}>
             <List>
               <ListItem>First Item</ListItem>
